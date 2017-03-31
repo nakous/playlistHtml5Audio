@@ -2,8 +2,12 @@
 playlist Html5 Audio
 
 
-This is a great project Phonegap created by Nakous Mustapha With Angularjs and Html/Js/Css
-you can include all songs in file music.xml and give him an id , name ... , and list of songs
+This is a great project Phonegap  With Angularjs and Html/Js/Css created by Nakous Mustapha.
+
+if you want tutorial about this application you can find it here :
+http://howdevelopment.com/phonegap-make-playlist-mp3/
+
+you can include all songs in file music.xml and give him an id , name ... , and list of songs.
 
 <img class="aligncenter wp-image-80" src="http://howdevelopment.com/wp-content/uploads/2017/02/Capture-d’écran-2017-02-09-à-19.03.55-168x300.png" height="380" width="250">
 
