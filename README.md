@@ -2,7 +2,9 @@
 playlist Html5 Audio
 
 
-This is a great project Phonegap  With Angularjs and Html/Js/Css created by Nakous Mustapha.
+This is a great project Phonegap  With Angularjs and Html/Js/Css created by Nakous Mustapha .
+
+If you have any problems with installation or integration, please contact me ;)
 
 if you want tutorial about this application you can find it here :
 http://howdevelopment.com/phonegap-make-playlist-mp3/
@@ -29,3 +31,6 @@ analytics.startTrackerWithId('UA-xxxxxxxx-x', func....)
 //Here set your Id Admob, you can create 2 blocks in you admob account the publisher and interstitial Ad 
 publisherId:          "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx",  
 interstitialAdId:     "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx",
+
+
+Good luck
