@@ -1,0 +1,25 @@
+# playlistHtml5Audio
+playlist Html5 Audio
+
+
+This is a great project Phonegap created by Nakous Mustapha With Angularjs and Html/Js/Css
+you can include all songs in file music.xml and give him an id , name ... , and list of songs
+
+This is a list of elements you  need to change it in JS/index.js file :
+
+// Set your link to xml file here
+var URL="music.xml";
+
+//Set your link google play or app store 
+var PLAYURL="https://play.google.com/store/apps/details?id=com.cxxxxx";
+
+// Set the title of your the app here 
+ var TITRE="Amazigh music";
+
+// To track your app you need add Id code the google analytics here 
+// Get this id in your account google analytics, Create new property mobile (Not website)
+analytics.startTrackerWithId('UA-xxxxxxxx-x', func....)
+
+//Here set your Id Admob, you can create 2 blocks in you admob account the publisher and interstitial Ad 
+publisherId:          "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx",  
+interstitialAdId:     "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx",
