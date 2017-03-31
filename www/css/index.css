@@ -1,0 +1,265 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+
+#king {
+    background: none repeat scroll 0 0 #333;
+    border-radius: 3px;
+    margin: 7px auto 0;
+    padding: 5px 0;
+    width: 98%;
+}
+    
+#boi {
+    background: none repeat scroll 0 0 #333;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#boi img {
+    float: left;
+    margin: 7px 8px 3px 3px;
+    width: 33%;
+}
+
+#boi p {
+    margin: 4px 0;
+}
+#boi .text {
+    color: #fff;
+    float: left;
+    height: 80px;
+    overflow: auto;
+    text-transform: none;
+    width: 63%;
+}
+
+    a:-webkit-any-link {
+color: white;
+text-decoration: none;
+cursor: auto;
+    }
+
+    ul{
+
+    clear: both;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    right: 3px;
+
+
+    }
+
+#audio {
+    background: none repeat scroll 0 0 #000;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+.active a{
+
+    color:#5DB0E6;
+    text-decoration:none;
+}
+
+
+    
+
+
+#playlist {
+    margin: auto;
+    text-decoration: none;
+    width: 97%;
+}
+
+#playlist    li {
+   background: url("../img/images.png") no-repeat scroll 2px 4px #ddd;
+    border-radius: 3px;
+    color: #333;
+    margin-bottom: 2px;
+    padding:9px 7px 7px 27px;
+      
+  }
+  #playlist    li  a{
+      color: #000;
+    text-decoration: none;
+    text-transform: none;
+  }
+  #playlist    li.active {
+	background: url("../img/play.png") no-repeat scroll 2px 4px #ea9078;
+  }
+  #playlist    li.active a{
+   color: #fff;
+    font-weight: bold;
+  }
+  #arte > li {
+  background: #ae2626 none repeat scroll 0 0;
+    border: 1px solid #555;
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 2px 13px;
+    max-width: 250px;
+    vertical-align: bottom;
+    width: 48%;
+}
+
+#arte img {
+    max-height: 83px;
+    width: 100%;
+}
+#arte h2 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    padding: 4px 4px 7px;
+    text-shadow: 0 0 0;
+    text-transform: none;
+}
+.ui-content {
+    padding: 7px;
+}
+
+
+.msg {
+    
+    display: inline-block;
+    height: 31px;
+    width: 31px;
+}
+.msg img {
+    width: 100%;
+
+}
+
+
+.retour {
+    background: none repeat scroll 0 0 #006383;
+    border-radius: 20px 0 0 20px;
+    color: #fff !important;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 8px 8px 19px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+
+#myCallbackFunction {
+    background: rgba(0, 0, 0, 0) url("../img/controls.png") no-repeat scroll 0 0;
+    font-size: 0;
+    height: 25px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 24px;
+}
+
+#playlist li a.upl {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    padding: 2px 12px;
+}
+

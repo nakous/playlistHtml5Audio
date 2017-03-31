@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-admob": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-plugin-analytics": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-connectivity-monitor": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        },
+        "cordova-google-play-services": {
+            "PACKAGE_NAME": "com.imorug.amazigh"
+        }
+    }
+}

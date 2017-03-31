@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="sound">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Amazigh music</title>
+		
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="js/vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="js/vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+		<link rel="stylesheet" href="css/nativedroid2.color.green.css" />
+		<link rel="stylesheet" href="css/index.css">
+		
+		<script type="text/javascript"  src="js/jquery.min.js"></script>
+		<script type="text/javascript"  src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript"  src="js/jquery.mobile.min.js"></script>
+		<script type="text/javascript"  src="js/vendor/waves/waves.min.js"></script>
+		<script type="text/javascript"  src="js/vendor/wow/wow.min.js"></script>
+		<script type="text/javascript" src="js/nativedroid2.js"></script>
+		<script type="text/javascript"  src="js/nd2settings.js"></script>
+		<script type="text/javascript" 	src='js/angular/angular.js'></script>
+<script type="text/javascript" src="js/SocialSharing.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/xml2json.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		
+    </head>
+    <body ng-controller="global">
+	 <div data-role="page"  id="homepage">
+		 <div data-role="header" data-position="fixed" class="wow fadeIn">				
+				<h1  class="wow fadeIn" data-wow-delay='0.4s'>Amazigh music</h1>
+				<a href="#share"    class="ui-btn ui-btn-left "><i class="zmdi  zmdi-share"></i></a>
+				 <!--a href="#search"  class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'><i class="zmdi zmdi-search"></i></a-->
+		</div>
+		<div data-role="content">
+			<div class="error"></div>
+		    <form class="form-inline">
+				<div class="form-group">					
+					<input type="text" ng-model="search" class="form-control" placeholder="Rechercher">
+				</div>
+			</form>
+			<div class="" ng-show="!artiste.length">Loading ...</div>
+			<div class="nd2-card" data-ng-repeat="art in artiste | filter:search"  >
+				<div class="card-media" ng-click="to_album(art)">
+					<img src="{{art.photo}}">
+					<div class='card-media-overlay with-background'>
+						<div class="card-title has-supporting-text">
+							<h3 class="card-primary-title">{{art.nom.__cdata}}</h3>				
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--ul id="arte">
+				<li data-ng-repeat="art in artiste"  ng-click="to_album(art)"><img src="{{art.photo}}"><h2>{{art.nom}}</h2></li>
+			</ul-->
+		</div>
+	</div>
+	<div data-role="page"  id="playlistpage">
+		 <div data-role="header" data-position="fixed" class="wow fadeIn">				
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>{{album.nom.__cdata}}</h1>
+				 <a href="#home" data-rel="back" class="ui-btn ui-btn-left" ><i class="zmdi zmdi-arrow-back"></i></a>
+		</div>
+		<div data-role="content">
+			 
+			 <!--a href="#home" data-rel="back" class="ui-btn ui-btn-left" ><i class="zmdi zmdi-arrow-back"></i></a>
+			 <h1 class="wow fadeIn" data-wow-delay='0.4s'>{{album.titre}}</h1>
+			 <a class="msg"  href="#" onclick="window.plugins.socialsharing.share($('#audio').attr('src'));return false;"><img src="img/icone_partage.png"></a-->
+			<div id="king">
+			
+				<h1 class="titre">{{album.nom.__cdata}}</h1>
+				<div id="boi" >
+					<img  src="{{album.photo}}">
+					<div class="text">
+						<p>{{album.boi.__cdata}}</p>
+					</div>
+					
+				</div>
+				<audio id="audio"  autoplay  controls="controls" src="" type="audio/mpeg">			
+					Sorry, your browser does not support HTML5 audio.
+				</audio>
+				<ul   ng-if="album.playlist.ms.length!=0" id="playlist">
+					<li data-ng-repeat="mp in album.playlist.ms">
+						<a  class="lk" href="{{mp._link}}">{{mp.__cdata}}</a>
+						<a class="upl"  download="{{mp.__cdata}}.mp3" href="{{mp._link}}">
+							<i class="zmdi zmdi-download"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page"  id="share">
+		<div data-role="header" data-position="fixed" class="wow fadeIn">				
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Amazigh music</h1>
+				 <a href="#home" data-rel="back" class="ui-btn ui-btn-left" ><i class="zmdi zmdi-arrow-back"></i></a>
+		</div>
+		<div data-role="content">
+		<p>Écoute et télécharge Amazigh musique mp3 gratuitement les titres les plus populaires de Amazigh </p>
+
+				<button ng-click="shareTT()">Partage {{app_name}}</button>
+				
+		</div>
+	</div>
+
+	
+
+     
+    </body>
+</html>
